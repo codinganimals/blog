@@ -196,7 +196,7 @@ def show_post(post_id):
         else:
             flash("Please login first.")
             return redirect(url_for("login"))
-    return render_template("post.html", post=requested_post, form=form)
+    return render_template("post.html", post=requested_post, form=form, logged_in=current_user.is_authenticated)
 
 
 @app.route("/about")
